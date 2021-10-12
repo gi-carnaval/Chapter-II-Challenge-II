@@ -23,6 +23,14 @@
       "price": "25.90",
       "available": false,
       "image": "https://storage.googleapis.com/golden-wind/bootcamp-gostack/desafio-food/food3.png"
+    },
+    {
+      "image": "https://chinezinho.com.br/wp-content/uploads/2020/02/strogonoff-carne-1.png",
+      "name": "Strogonoff",
+      "price": "22.50",
+      "description": "Strogonoff de Carne com Arroz e Batata Palha",
+      "available": false,
+      "id": 4
     }
   ]
 }
