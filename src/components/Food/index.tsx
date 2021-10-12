@@ -1,29 +1,22 @@
-import { Component } from 'react';
+import { useState } from 'react';
 import { FiEdit3, FiTrash } from 'react-icons/fi';
 
 import { Container } from './styles';
 import api from '../../services/api';
 
-class Food extends Component {
-  constructor(props) {
-    super(props);
-
-    const { available } = this.props.food;
-    this.state = {
-      isAvailable: available
-    };
-  }
-
-  toggleAvailable = async () => {
+const Food = (): JSX.Element => {
+  
+  const toggleAvailable = async () => {
+    const [isAvailable, setIsAvailabe] = useState(false)
+    
     const { food } = this.props;
-    const { isAvailable } = this.state;
+    // const { isAvailable } = this.state;
 
     await api.put(`/foods/${food.id}`, {
       ...food,
       available: !isAvailable,
     });
-
-    this.setState({ isAvailable: !isAvailable });
+    setIsAvailabe(!isAvailable);
   }
 
   setEditingFood = () => {
@@ -32,8 +25,7 @@ class Food extends Component {
     handleEditFood(food);
   }
 
-  render() {
-    const { isAvailable } = this.state;
+  const { isAvailable } = this.state;
     const { food, handleDelete } = this.props;
 
     return (
@@ -77,7 +69,7 @@ class Food extends Component {
                 id={`available-switch-${food.id}`}
                 type="checkbox"
                 checked={isAvailable}
-                onChange={this.toggleAvailable}
+                onChange={toggleAvailable}
                 data-testid={`change-status-food-${food.id}`}
               />
               <span className="slider" />
@@ -86,7 +78,7 @@ class Food extends Component {
         </section>
       </Container>
     );
-  }
+
 };
 
 export default Food;
