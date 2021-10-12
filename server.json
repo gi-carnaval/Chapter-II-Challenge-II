@@ -25,11 +25,19 @@
       "image": "https://storage.googleapis.com/golden-wind/bootcamp-gostack/desafio-food/food3.png"
     },
     {
+<<<<<<< HEAD
       "image": "Strogonnoff",
       "name": "Patinho",
       "price": "22,90",
       "description": "Prato completo com Arroz, Strogonoff de Patinho e batata palha",
       "available": true,
+=======
+      "image": "https://chinezinho.com.br/wp-content/uploads/2020/02/strogonoff-carne-1.png",
+      "name": "Strogonoff",
+      "price": "22.50",
+      "description": "Strogonoff de Carne com Arroz e Batata Palha",
+      "available": false,
+>>>>>>> Dev
       "id": 4
     }
   ]
